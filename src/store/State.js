@@ -5,14 +5,21 @@ import data from './data.json'
 
 class State {
     data = []
+    inputColumn = 4
 
     constructor() {
         configure({
             useProxies: "never"
         })
         makeAutoObservable(this, {
-            data: observable
+            data: observable,
+            inputColumn: observable
         })
+    }
+
+    input(data) {
+        console.log(data)
+        this.inputColumn = data
     }
 
     GetData() {

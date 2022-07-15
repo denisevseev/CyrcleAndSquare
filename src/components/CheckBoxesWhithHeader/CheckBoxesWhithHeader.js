@@ -1,6 +1,9 @@
 import React from 'react';
 import s from './Module.CheckBoxesWhithHeader.scss'
 const CheckBoxesWhithHeader = () => {
+    const Handle = (e)=>{
+        console.log(e.target.checked)
+    }
     return (
         <div style={{display: "flex"}}>
             <div  className="form-check">
@@ -9,7 +12,7 @@ const CheckBoxesWhithHeader = () => {
                        Круги
                     </label>
             </div>
-            <div className="form-check">
+            <div className="form-check" onChange={(e)=>Handle(e)}>
                 <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
                     <label className="form-check-label" htmlFor="flexCheckChecked">
                         Квадраты
