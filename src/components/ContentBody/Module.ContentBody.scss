@@ -1,0 +1,16 @@
+
+.SquareAndCyrcle{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  #square {
+    width: 100px;
+    height: 100px;
+  }
+  #circle {
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+  }
+}
