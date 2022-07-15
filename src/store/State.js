@@ -6,6 +6,8 @@ import data from './data.json'
 class State {
     data = []
     inputColumn = 4
+    Square = true
+    Circle = true
 
     constructor() {
         configure({
@@ -13,13 +15,20 @@ class State {
         })
         makeAutoObservable(this, {
             data: observable,
-            inputColumn: observable
+            inputColumn: observable,
+            Square:observable,
+            Circle:observable
         })
     }
 
     input(data) {
-        console.log(data)
         this.inputColumn = data
+    }
+    square(data){
+        this.Square = data
+    }
+    circle(data){
+        this.Circle = data
     }
 
     GetData() {

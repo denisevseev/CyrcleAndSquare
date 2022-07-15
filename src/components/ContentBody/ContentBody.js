@@ -7,6 +7,7 @@ const ContentBody = () => {
     function getRandom() {
         return Math.random();
     }
+
     const data = State.data
     useEffect(() => {
         State.GetData()
@@ -15,11 +16,12 @@ const ContentBody = () => {
         return (
             <div className='SquareAndCyrcle' style={{gridTemplateColumns: `repeat(${State.inputColumn}, 1fr)`}}>
                 {JSON.parse(data).map((data) =>
-                    <div >
-                        {getRandom()>=0.5?<div style={{background: data.color}} id='circle'></div>:
-                        <div style={{background: data.color}} id='square'></div>}
+                    <div>
+                        {getRandom() >= 0.5 && State.Circle === true ?
+                            <div style={{background: data.color}} id='circle'></div> :
+                            State.Square === true ?
+                                <div style={{background: data.color}} id='square'></div> : ''}
                     </div>
-
                 )}
             </div>
         );
