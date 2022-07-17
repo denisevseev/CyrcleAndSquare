@@ -1,8 +1,13 @@
 import React, {useEffect, useRef} from 'react';
 import style from './Module.LeftMenu.scss'
 import State from "../store/State";
+import {observer} from "mobx-react";
 
 const LeftMenu = () => {
+    let ChangeCheckBox = (e) => {
+        State.LeftMenuCheckboxes(e)
+    }
+
     let showMenu = () => {
         ref.current.style.display = 'inline'
     }
@@ -20,15 +25,15 @@ const LeftMenu = () => {
                 <span className="third"></span>
             </label>
 
-            <ul className="hidden-menu">
-                <li><input type="checkbox"/>Красные</li>
-                <li><input type="checkbox"/>Зеленые</li>
-                <li><input type="checkbox"/>Синие</li>
-                <li><input type="checkbox"/>Желтые</li>
+            <ul onChange={(e) => ChangeCheckBox(e)} className="hidden-menu">
+                <li><input value='red' type="checkbox"/>Красные</li>
+                <li><input value='green' type="checkbox"/>Зеленые</li>
+                <li><input value='blue' type="checkbox"/>Синие</li>
+                <li><input value='yellow' type="checkbox"/>Желтые</li>
                 <div>
-                    <li><input type="radio"/>Все</li>
-                    <li><input type="radio"/>Темные</li>
-                    <li><input type="radio"/>Светлые</li>
+                    <li><input name="browser" value='all' type="radio"/>Все</li>
+                    <li><input name="browser" value='dark' type="radio"/>Темные</li>
+                    <li><input name="browser" value='light' type="radio"/>Светлые</li>
                 </div>
                 <li>Колонок<input type="text" onChange={(e) => inputChanged(e)} style={{width: "30px"}}/></li>
             </ul>
@@ -36,4 +41,4 @@ const LeftMenu = () => {
     );
 };
 
-export default LeftMenu;
+export default observer(LeftMenu);
