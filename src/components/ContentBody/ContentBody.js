@@ -7,7 +7,6 @@ const ContentBody = () => {
     function getRandom() {
         return Math.random();
     }
-    // const ref = useRef()
 
     const data = State.data
    useEffect(() => {
