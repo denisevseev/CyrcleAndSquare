@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import style from './Module.LeftMenu.scss'
+import s from  './Module.LeftMenu.scss'
 import State from "../store/State";
 import {observer} from "mobx-react";
 
@@ -19,7 +19,6 @@ const LeftMenu = () => {
     return (
         <div>
             <input type="checkbox" id="hmt" className="hidden-menu-ticker"/>
-
             <label className="btn-menu" htmlFor="hmt">
                 <span className="first"></span>
                 <span className="second"></span>

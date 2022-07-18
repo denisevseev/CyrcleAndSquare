@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './Module.CheckBoxesWhithHeader.scss'
+import './Module.CheckBoxesWhithHeader.scss'
 import State from "../../store/State";
 import {observer} from "mobx-react";
 

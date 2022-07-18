@@ -31,7 +31,8 @@
     cursor: pointer;
     transition: left .23s;
     z-index: 3;
-    width: 25px;
+    width: 2em;
+    background-color: #666666;
     -webkit-transform: translateZ(0);
     -webkit-backface-visibility: hidden;
 }
