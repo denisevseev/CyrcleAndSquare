@@ -8,10 +8,11 @@ class State {
     inputColumn = 4
     Square = true
     Circle = true
-    CheckboxOnlyRed = false
-    CheckboxOnlyGreen = false
-    CheckboxOnlyBlue = false
-    CheckboxOnlyYellow = false
+    dark='all'
+    CheckboxOnlyRed = true
+    CheckboxOnlyGreen = true
+    CheckboxOnlyBlue = true
+    CheckboxOnlyYellow = true
 
     constructor() {
         configure({
@@ -46,6 +47,11 @@ class State {
         let checked = e.target.checked
         if (value == 'red') this.CheckboxOnlyRed = checked;
         if (value == 'green') this.CheckboxOnlyGreen = checked;
+        if (value == 'blue') this.CheckboxOnlyBlue = checked;
+        if (value == 'yellow') this.CheckboxOnlyYellow = checked;
+        if(value=='light') this.dark = 'light'
+        if(value=='dark') this.dark = 'dark'
+        if(value=='all') this.dark = 'all'
     }
 
 

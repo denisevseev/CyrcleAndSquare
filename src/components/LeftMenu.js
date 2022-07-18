@@ -5,6 +5,7 @@ import {observer} from "mobx-react";
 
 const LeftMenu = () => {
     let ChangeCheckBox = (e) => {
+        console.log(e.target.value)
         State.LeftMenuCheckboxes(e)
     }
 
@@ -26,12 +27,12 @@ const LeftMenu = () => {
             </label>
 
             <ul onChange={(e) => ChangeCheckBox(e)} className="hidden-menu">
-                <li><input value='red' type="checkbox"/>Красные</li>
-                <li><input value='green' type="checkbox"/>Зеленые</li>
-                <li><input value='blue' type="checkbox"/>Синие</li>
-                <li><input value='yellow' type="checkbox"/>Желтые</li>
+                <li><input id='check' style={{fontSize: '45px'}} value='red' type="checkbox" checked={State.CheckboxOnlyRed} />Красные</li>
+                <li><input value='green'  type="checkbox"  checked={State.CheckboxOnlyGreen}/>Зеленые</li>
+                <li><input value='blue' type="checkbox"  checked={State.CheckboxOnlyBlue}/>Синие</li>
+                <li><input value='yellow' type="checkbox"  checked={State.CheckboxOnlyYellow}/>Желтые</li>
                 <div>
-                    <li><input name="browser" value='all' type="radio"/>Все</li>
+                    <li><input name="browser" value='all'  type="radio"/>Все</li>
                     <li><input name="browser" value='dark' type="radio"/>Темные</li>
                     <li><input name="browser" value='light' type="radio"/>Светлые</li>
                 </div>

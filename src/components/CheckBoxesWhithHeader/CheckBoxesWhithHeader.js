@@ -4,7 +4,6 @@ import State from "../../store/State";
 import {observer} from "mobx-react";
 
 const CheckBoxesWhithHeader = () => {
-    // console.log(State.Circle)
     const HandleSquare = (e) => {
         if (e.target.checked) {
             State.square(true)
