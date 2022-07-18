@@ -1,5 +1,5 @@
 import React, {useEffect, useRef} from 'react';
-import s from  './Module.LeftMenu.scss'
+import './Module.LeftMenu.scss'
 import State from "../store/State";
 import {observer} from "mobx-react";
 
@@ -25,18 +25,35 @@ const LeftMenu = () => {
                 <span className="third"></span>
             </label>
 
-            <ul onChange={(e) => ChangeCheckBox(e)} className="hidden-menu">
-                <li><input id='check' style={{fontSize: '45px'}} value='red' type="checkbox" checked={State.CheckboxOnlyRed} />Красные</li>
-                <li><input value='green'  type="checkbox"  checked={State.CheckboxOnlyGreen}/>Зеленые</li>
-                <li><input value='blue' type="checkbox"  checked={State.CheckboxOnlyBlue}/>Синие</li>
-                <li><input value='yellow' type="checkbox"  checked={State.CheckboxOnlyYellow}/>Желтые</li>
-                <div>
-                    <li><input name="browser" value='all'  type="radio"/>Все</li>
-                    <li><input name="browser" value='dark' type="radio"/>Темные</li>
-                    <li><input name="browser" value='light' type="radio"/>Светлые</li>
+            <div onClick={(e) => ChangeCheckBox(e)} className="hidden-menu">
+                <div className="form-check">
+                    <input className="form-check-input" id='check'  value='red' type="checkbox"  checked={State.CheckboxOnlyRed} />Красные
                 </div>
-                <li>Колонок<input type="text" onChange={(e) => inputChanged(e)} style={{width: "30px"}}/></li>
-            </ul>
+                <div className="form-check">
+                    <input className="form-check-input"  value='green' type="checkbox"  checked={State.CheckboxOnlyGreen} />Зеленые
+                </div>
+                <div className="form-check" style={{float: 'left', margin: 'auto'}}>
+                    <input className="form-check-input"   value='blue' type="checkbox"  checked={State.CheckboxOnlyBlue} />Синие
+                </div>
+                <div className="form-check">
+                    <input className="form-check-input"   value='yellow' type="checkbox"  checked={State.CheckboxOnlyYellow} />Желтые
+                </div>
+                    <div  className="form-check">
+                        <div className='form-check all' >
+                            <input className="form-check-input" type="radio" value='all' name="flexRadioDefault" id="flexRadioDefault1" />
+                            <label className="form-check-label" htmlFor="flexRadioDefault1">
+                                Все
+                            </label>
+                        </div>
+                    </div>
+                <div className="form-check">
+                    <input className="form-check-input" type="radio" value='dark' name="flexRadioDefault" id="flexRadioDefault2" />Темные
+                </div>
+                <div className="form-check">
+                    <input className="form-check-input" value='light' type="radio" name="flexRadioDefault" id="flexRadioDefault2" />Светлые
+                </div>
+                <div className='form-check' style={{display: 'flex'}}>Колонок<input className="form-control" type="text"  style={{width: "2em"}} /></div>
+            </div>
         </div>
     );
 };

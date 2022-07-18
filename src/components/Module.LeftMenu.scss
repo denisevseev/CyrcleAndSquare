@@ -2,12 +2,13 @@
     display: block;
     position: fixed;
     list-style:none;
-    padding: 10px;
+    padding: 1em;
     margin: 0;
     box-sizing: border-box;
     width: 200px;
     background-color: #eee;
     font-size: 26px;
+    opacity: 0.85;
     height: 100%;
     top: 0;
     left: -200px;
@@ -20,7 +21,12 @@
 .hidden-menu-ticker {
     display: none;
 }
-
+.form-check{
+    float: left;
+}
+.all{
+    margin-left: -0.7em;
+}
 .btn-menu {
     color: #fff;
     background-color: gray;

@@ -19,20 +19,16 @@ const CheckBoxesWhithHeader = () => {
         }
     }
     return (
-        <div style={{display: "flex"}}>
+        <div className='checkboxes' style={{display: "flex"}}>
             <div className="form-check">
                 <input onClick={(e) => HandleCircle(e)}
-                       className="form-check-input" type="checkbox" value="" id="flexCheckDefault"
-                       checked={State.Circle}/>
-                <label className="form-check-label" htmlFor="flexCheckDefault">
-                    Круги
-                </label>
+                       className="form-check-input" type="checkbox" checked={State.Circle}/>
+                Круги
             </div>
-            <div className="form-check" onChange={(e) => HandleSquare(e)}>
-                <input  onClick={(e) => HandleSquare(e)} className="form-check-input" type="checkbox" checked={State.Square}/>
-                <label className="form-check-label" htmlFor="flexCheckChecked">
-                    Квадраты
-                </label>
+            <div className="form-check">
+                <input onClick={(e) => HandleSquare(e)} className="form-check-input"
+                       type="checkbox" checked={State.Square}/>
+                Квадраты
             </div>
         </div>
     );
