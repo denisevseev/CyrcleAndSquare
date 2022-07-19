@@ -17,7 +17,6 @@ const ContentBody = () => {
                 {JSON.parse(data).map((data) =>
                     {
                         let dark = State.dark
-                        console.log(dark)
                         let circle1=  <div style={{background: data.color}} id='circle'></div>
                         let square1 = <div style={{background: data.color}} id='square'></div>
                         let circle2 = dark=='all'? circle1: dark=='light'&&data.dark===true?circle1:dark=='dark'&&!data.dark?circle1:''

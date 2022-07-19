@@ -1,20 +1,21 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import './Module.LeftMenu.scss'
 import State from "../store/State";
 import {observer} from "mobx-react";
 
 const LeftMenu = () => {
+    const [isActive, setActive] = useState(false)
     let ChangeCheckBox = (e) => {
-        console.log(e.target.value)
         State.LeftMenuCheckboxes(e)
     }
-
+    let ref = useRef()
     let showMenu = () => {
         ref.current.style.display = 'inline'
     }
-    let ref = useRef()
     const inputChanged = (e) => {
+        setActive(true)
         State.input(e.target.value)
+        setTimeout(()=>setActive(false),2000)
     }
     return (
         <div>
@@ -52,7 +53,9 @@ const LeftMenu = () => {
                 <div className="form-check">
                     <input className="form-check-input" value='light' type="radio" name="flexRadioDefault" id="flexRadioDefault2" />Светлые
                 </div>
-                <div className='form-check' style={{display: 'flex'}}>Колонок<input className="form-control" type="text"  style={{width: "2em"}} /></div>
+                <div className='form-check input'>
+                    <span>Колонок</span>
+                    <input style={{width: isActive?'3.5em':'' , height: isActive?'3em':''}} onChange={(e)=>inputChanged(e)} className="form-control" type="text" /></div>
             </div>
         </div>
     );
